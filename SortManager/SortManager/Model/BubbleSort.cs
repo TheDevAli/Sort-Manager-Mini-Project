@@ -7,7 +7,7 @@ public class BubbleSorter : Sorter
     Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
 
     private long _timelapse;
-    public override long Timelapse
+    public long Timelapse
     {
         get;
     }

@@ -21,6 +21,13 @@ namespace SortManagerTests
             Assert.IsInstanceOf<MergeSorter>(sorter);
         }
 
+        [TestCase("c")]
+        public void CreateSorter_ReturnsAInsertionSorter(string type)
+        {
+            Sorter sorter = SorterFactory.CreateSorter(type);
+            Assert.IsInstanceOf<InsertionSort>(sorter);
+        }
+
         [TestCase(0, 0)]
         [TestCase(1, 1)]
         [TestCase(250, 250)]
@@ -56,5 +63,16 @@ namespace SortManagerTests
             MergeSorter sorter = new MergeSorter();
             Assert.That(sorter.Sort(input), Is.EqualTo(expected));
         }
+
+        [TestCase(new int[] { 2, 5, 6, 0, 4 }, new int[] { 0, 2, 4, 5, 6 })]
+        [TestCase(new int[] { -10, 10, 11, 2 }, new int[] { -10, 2, 10, 11 })]
+        [TestCase(new int[] { 10, 9, 8, 7, 4 }, new int[] { 4, 7, 8, 9, 10 })]
+        public void WhenGivenAnUnsortedArray_InsertionSort_ReturnsSortedArray(int[] input, int[] expected)
+        {
+            InsertionSort sorter = new InsertionSort();
+            Assert.That(sorter.Sort(input), Is.EqualTo(expected));
+        }
+
+
     }
 }
