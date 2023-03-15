@@ -1,4 +1,6 @@
-﻿namespace SortManager
+﻿using SortManager.Model;
+
+namespace SortManager
 {
     internal class Program
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SortManager.Model;
 
 namespace SortManager
 {
@@ -15,12 +16,6 @@ namespace SortManager
             int[] ary = ArrayBuilder.GenArray(arraySize);
 
             View.PrintArray(ary);
-
-
-
-
         }
-
-
     }
 }
