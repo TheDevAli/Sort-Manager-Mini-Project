@@ -106,10 +106,6 @@ namespace SortManager
 
             }
             return choice;
-
-
-
-
         }
 
 
