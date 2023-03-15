@@ -17,7 +17,9 @@ public static class SorterFactory
             case "d":
                 return new DotNetSort();
                 case "e":
-                return new QuickSort();
+                return new QuickSort();          
+            case "f":
+                return new BogoSort();
             default:
                 throw new ArgumentException("Invalid sort type");
         }
