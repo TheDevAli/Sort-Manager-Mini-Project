@@ -20,11 +20,7 @@ namespace SortManager
 
             Sorter a = SorterFactory.CreateSorter(View.AskSortAlgor());
 
-            a.Sort(ary);
-
-            
-
-                
+            View.PrintArray(a.Sort(ary));
 
 
         }
