@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 using SortManager.Model;
 
 namespace SortManager
@@ -17,7 +18,13 @@ namespace SortManager
 
             View.PrintArray(ary);
 
-            string choice = View.AskSortAlgor();
+            Sorter a = SorterFactory.CreateSorter(View.AskSortAlgor());
+
+            a.Sort(ary);
+
+            
+
+                
 
 
         }
