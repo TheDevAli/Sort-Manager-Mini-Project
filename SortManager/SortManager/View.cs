@@ -65,7 +65,7 @@ namespace SortManager
         {
             Console.WriteLine("Which Sorting Algorithm would you like to use?");
             Console.WriteLine("Please enter one of the choices");
-            Console.WriteLine("A: Bubble Sort B: Merge Sort C: Insertion Sort D: E:");
+            Console.WriteLine("A: Bubble Sort B: Merge Sort C: Insertion Sort D: .NET Sort E:");
 
 
             string userInput = Console.ReadLine().ToLower();
@@ -90,7 +90,7 @@ namespace SortManager
                         
                         break;
                     case "d":
-                    Console.WriteLine("You chose Sort");
+                    Console.WriteLine("You chose .NET Sort");
                         choice = "d";
                        
                         break;
