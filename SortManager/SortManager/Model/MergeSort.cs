@@ -2,7 +2,7 @@
 
 namespace Model;
 
-internal class MergeSorter : Sorter
+public class MergeSorter : Sorter
 {
     private Stopwatch stopWatch = Stopwatch.StartNew();
 

@@ -4,13 +4,9 @@ namespace Model;
 
 public class BubbleSorter : Sorter
 {
-    Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
+    Stopwatch stopWatch =Stopwatch.StartNew();
 
-    private long _timelapse;
-    public override long Timelapse
-    {
-        get;
-    }
+
 
     public override long GetMilliseconds()
     {
@@ -40,7 +36,6 @@ public class BubbleSorter : Sorter
 
         stopWatch.Stop();
 
-        _timelapse = stopWatch.ElapsedMilliseconds;
 
         return input;
     }
