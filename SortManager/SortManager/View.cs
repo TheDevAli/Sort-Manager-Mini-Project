@@ -66,7 +66,7 @@ namespace SortManager
         {
             Console.WriteLine("Which Sorting Algorithm would you like to use?");
             Console.WriteLine("Please enter one of the choices");
-            Console.WriteLine("A: Bubble Sort B: Merge Sort C: Insertion Sort D: .NET Sort E:");
+            Console.WriteLine("A: Bubble Sort B: Merge Sort C: Insertion Sort D: .NET Sort E: Quick Sort");
 
 
             string userInput = Console.ReadLine().ToLower();
@@ -95,8 +95,12 @@ namespace SortManager
                     choice = "d";
 
                     break;
+                    case "e":
+                    Console.WriteLine("You chose Quick Sort");
+                    choice = "e";
+                    break;
                 default:
-                    Console.WriteLine("Wrong input please try again");
+                    Console.WriteLine("Invalid input, please try again");
                     AskSortAlgor();
                     break;
 
@@ -111,18 +115,18 @@ namespace SortManager
 
         public static void PrintTick(long tick)
         {
-            Console.WriteLine($"The runtime of this algor is {tick} ticks");
+            Console.WriteLine($"The runtime of this algorithm is {tick} Ticks");
         }
 
         public static void PrintMS(long ms)
         {
-            Console.WriteLine($"The runtime of this algor is {ms} MS");
+            Console.WriteLine($"The runtime of this algorithm is {ms} ms");
         }
 
         public static bool Reverse()
         {
             Console.WriteLine("Do you want your array sorted from Largest to Smallest?");
-            Console.WriteLine("Y/n");
+            Console.WriteLine("y/n");
             
 
             string userInput = Console.ReadLine().ToLower();

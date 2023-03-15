@@ -16,6 +16,8 @@ public static class SorterFactory
                 return new InsertionSort();
             case "d":
                 return new DotNetSort();
+                case "e":
+                return new QuickSort();
             default:
                 throw new ArgumentException("Invalid sort type");
         }
