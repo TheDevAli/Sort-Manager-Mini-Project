@@ -14,6 +14,8 @@ public static class SorterFactory
                 return new MergeSorter();
             case "c":
                 return new InsertionSort();
+            case "d":
+                return new DotNetSort();
             default:
                 throw new ArgumentException("Invalid sort type");
         }
