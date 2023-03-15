@@ -13,28 +13,35 @@ namespace SortManager
 
         public static int AskArraySize()
         {
-            Console.WriteLine("Enter a number:");
-
+            Console.WriteLine("Enter a positive number smaller or equal to 1000: ");
+            
 
 
             int number = 0;
-            bool flag = true;
-            while (flag)
-            {
+            
+            
                 string userInput = Console.ReadLine();
                 if (int.TryParse(userInput, out number))
                 {
-                    Console.WriteLine("You entered: " + number);
-                    flag = false;
+                    
+                    if(number <= 1000 && number > 0)
+                    {
+                        Console.WriteLine("The number you entered is: " + number);
+                        ;
+                    } else
+                    {
+                        Console.WriteLine("Number should be less than or equal to 1000 ");
+                    AskArraySize();
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Invalid input!");
                     Console.WriteLine("Try again!");
-                    flag = true;
-                }
-
+                    AskArraySize();
             }
+
+            
 
             return number;
         }
@@ -52,6 +59,57 @@ namespace SortManager
                 }
             }
             Console.WriteLine(" ]");
+        }
+
+        public static string  AskSortAlgor()
+        {
+            Console.WriteLine("Which Sorting Algorithm would you like to use?");
+            Console.WriteLine("Please enter one of the choices");
+            Console.WriteLine("A: Bubble Sort B: Merge Sort C: D: E:");
+
+
+            string userInput = Console.ReadLine().ToLower();
+            string choice = "";
+
+            
+            switch (userInput)
+            {
+                case "a":
+                    Console.WriteLine("You chose Bubble Sort");
+                        choice =  "a";
+                        
+                        break;
+                    case "b":
+                    Console.WriteLine("You chose Merge Sort");
+                        choice = "b";
+                        
+                        break;
+                    case "c":
+                    Console.WriteLine("You chose Sort");
+                        choice = "c";
+                        
+                        break;
+                    case "d":
+                    Console.WriteLine("You chose Sort");
+                        choice = "d";
+                       
+                        break;
+                    case "e":
+                    Console.WriteLine("You chose Sort");
+                        choice = "e";
+                       
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input please try again");
+                        AskSortAlgor();
+                        break;
+
+            }
+            return choice;
+
+
+
+
         }
 
 
