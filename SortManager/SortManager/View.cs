@@ -85,7 +85,7 @@ namespace SortManager
                         
                         break;
                     case "c":
-                    Console.WriteLine("You chose Sort");
+                    Console.WriteLine("You chose Insertion Sort");
                         choice = "c";
                         
                         break;

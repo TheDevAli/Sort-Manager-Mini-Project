@@ -12,6 +12,8 @@ public static class SorterFactory
                 return new BubbleSorter();
             case "b":
                 return new MergeSorter();
+            case "c":
+                return new InsertionSort();
             default:
                 throw new ArgumentException("Invalid sort type");
         }
