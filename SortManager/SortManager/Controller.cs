@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace SortManager
 {
-    internal class Controller
+    public class Controller
     {
+        public static void start()
+        {
+            int arraySize = View.AskArraySize();
+
+            int[] ary = ArrayBuilder.GenArray(arraySize);
+
+            View.PrintArray(ary);
+
+
+
+
+        }
+
+
     }
 }

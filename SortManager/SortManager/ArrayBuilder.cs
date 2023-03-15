@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace SortManager
 {
-    public  class ArrayBuilder
+    public class ArrayBuilder
     {
         public static int[] GenArray(int lengthOfTheArray)
         {
             Random rand = new Random();
-            int[] randomArray = new int[lengthOfTheArray]; 
+            int[] randomArray = new int[lengthOfTheArray];
 
             for (int i = 0; i < randomArray.Length; i++)
             {
-                randomArray[i] = rand.Next(-100, 100); 
+                randomArray[i] = rand.Next(-100, 100);
             }
             return randomArray;
         }
