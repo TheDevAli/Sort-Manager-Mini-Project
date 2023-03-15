@@ -5,14 +5,17 @@ namespace SortManager.Model
 {
     public class InsertionSort : Sorter
     {
-        Stopwatch stopWatch = new Stopwatch();
+        private Stopwatch stopWatch = Stopwatch.StartNew();
 
-        private long _timelapse;
-        public override long Timelapse
+
+        public override long GetMilliseconds()
         {
-            get;
+            return stopWatch.ElapsedMilliseconds;
         }
-
+        public override long GetTicks()
+        {
+            return stopWatch.ElapsedTicks;
+        }
         public override int[] Sort(int[] input)
         {
             stopWatch.Start();
@@ -31,7 +34,7 @@ namespace SortManager.Model
             }
 
             stopWatch.Stop();
-            _timelapse = stopWatch.ElapsedMilliseconds;
+
 
             return input;
         }

@@ -6,10 +6,7 @@ public class MergeSorter : Sorter
 {
     private Stopwatch stopWatch = Stopwatch.StartNew();
 
-    public override long Timelapse
-    {
-        get;
-    }
+
     private int[] MergeSort(int[] input)
     {
 
