@@ -18,10 +18,28 @@ namespace SortManager
 
             View.PrintArray(ary);
 
+            bool rev = View.Reverse();
+
             Sorter a = SorterFactory.CreateSorter(View.AskSortAlgor());
 
-            View.PrintArray(a.Sort(ary));
+            var output = a.Sort(ary);
 
+            
+
+            if (rev)
+            {
+                output = output.Reverse().ToArray();
+                View.PrintArray(output);
+            } else
+            {
+                View.PrintArray(output);
+            }
+
+            
+
+            View.PrintMS(a.GetMilliseconds());
+
+            View.PrintTick(a.GetTicks());
 
         }
     }

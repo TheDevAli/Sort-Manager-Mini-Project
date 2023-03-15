@@ -13,35 +13,36 @@ namespace SortManager
 
         public static int AskArraySize()
         {
-            Console.WriteLine("Enter a positive number smaller or equal to 1000: ");
-            
+            Console.WriteLine("Choose your array length (up to 1000): ");
+
 
 
             int number = 0;
-            
-            
-                string userInput = Console.ReadLine();
-                if (int.TryParse(userInput, out number))
+
+
+            string userInput = Console.ReadLine();
+            if (int.TryParse(userInput, out number))
+            {
+
+                if (number <= 1000 && number > 0)
                 {
-                    
-                    if(number <= 1000 && number > 0)
-                    {
-                        Console.WriteLine("The number you entered is: " + number);
-                        ;
-                    } else
-                    {
-                        Console.WriteLine("Number should be less than or equal to 1000 ");
-                    AskArraySize();
-                    }
+                    Console.WriteLine("The number you entered is: " + number);
+                    ;
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input!");
-                    Console.WriteLine("Try again!");
+                    Console.WriteLine("Number should be less than or equal to 1000 ");
                     AskArraySize();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input!");
+                Console.WriteLine("Try again!");
+                AskArraySize();
             }
 
-            
+
 
             return number;
         }
@@ -61,7 +62,7 @@ namespace SortManager
             Console.WriteLine(" ]");
         }
 
-        public static string  AskSortAlgor()
+        public static string AskSortAlgor()
         {
             Console.WriteLine("Which Sorting Algorithm would you like to use?");
             Console.WriteLine("Please enter one of the choices");
@@ -71,38 +72,33 @@ namespace SortManager
             string userInput = Console.ReadLine().ToLower();
             string choice = "";
 
-            
+
             switch (userInput)
             {
                 case "a":
                     Console.WriteLine("You chose Bubble Sort");
-                        choice =  "a";
-                        
-                        break;
-                    case "b":
+                    choice = "a";
+
+                    break;
+                case "b":
                     Console.WriteLine("You chose Merge Sort");
-                        choice = "b";
-                        
-                        break;
-                    case "c":
+                    choice = "b";
+
+                    break;
+                case "c":
                     Console.WriteLine("You chose Insertion Sort");
-                        choice = "c";
-                        
-                        break;
-                    case "d":
+                    choice = "c";
+
+                    break;
+                case "d":
                     Console.WriteLine("You chose .NET Sort");
-                        choice = "d";
-                       
-                        break;
-                    case "e":
-                    Console.WriteLine("You chose Sort");
-                        choice = "e";
-                       
-                        break;
-                    default:
-                        Console.WriteLine("Wrong input please try again");
-                        AskSortAlgor();
-                        break;
+                    choice = "d";
+
+                    break;
+                default:
+                    Console.WriteLine("Wrong input please try again");
+                    AskSortAlgor();
+                    break;
 
             }
             return choice;
@@ -113,10 +109,47 @@ namespace SortManager
         }
 
 
+        public static void PrintTick(long tick)
+        {
+            Console.WriteLine($"The runtime of this algor is {tick} ticks");
+        }
+
+        public static void PrintMS(long ms)
+        {
+            Console.WriteLine($"The runtime of this algor is {ms} MS");
+        }
+
+        public static bool Reverse()
+        {
+            Console.WriteLine("Do you want your array sorted from Largest to Smallest?");
+            Console.WriteLine("Y/n");
+            
+
+            string userInput = Console.ReadLine().ToLower();
 
 
-        
+            switch (userInput)
+            {
+                case "y":
+                    Console.WriteLine("Largest to Smallest");
+                    return true;
+                    
+
+                case "n":
+                    Console.WriteLine("Smallest to Largest");
+                    return false;
+                    
+
+                default:
+                    Console.WriteLine("Wrong input please try again");
+                    Reverse();
+                    break;
+
+            }
+
+            return true;
 
 
+        }
     }
 }
