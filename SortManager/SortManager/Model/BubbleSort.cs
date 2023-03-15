@@ -14,14 +14,12 @@ public class BubbleSorter : Sorter
 
     public override long GetMilliseconds()
     {
-        throw new NotImplementedException();
+        return stopWatch.ElapsedMilliseconds;
     }
-
     public override long GetTicks()
     {
-        throw new NotImplementedException();
+        return stopWatch.ElapsedTicks;
     }
-
     public override int[] Sort(int[] input)
     {
         stopWatch.Start();

@@ -13,7 +13,7 @@ namespace SortManager
             int[] sortedArr = sorter.Sort(arr);
 
             Console.WriteLine($"Elapsed: {sorter.GetMilliseconds()} ms and {sorter.GetTicks()} ticks");
-             Console.WriteLine();           
+             Console.WriteLine();
             foreach (int i in sortedArr)
                 Console.Write(i + ", ");
 

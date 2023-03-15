@@ -6,7 +6,6 @@ internal class MergeSorter : Sorter
 {
     private Stopwatch stopWatch = Stopwatch.StartNew();
 
-    private long _millisecs,_ticks;
     public override long Timelapse
     {
         get;
@@ -54,17 +53,15 @@ internal class MergeSorter : Sorter
         stopWatch.Restart();
         int[] result = MergeSort(input);
         stopWatch.Stop();
-        _ticks = stopWatch.ElapsedTicks;
-        _millisecs=stopWatch.ElapsedMilliseconds;
         return result;
     }
     public  override long GetMilliseconds()
     {
-        return _millisecs; 
+        return stopWatch.ElapsedMilliseconds;
     }
     public override long GetTicks()
     {
-        return _ticks;
+        return stopWatch.ElapsedTicks;
     }
     private static void Merge(int[] leftArray, int[] rightArray, int[] inputArray)
     {
