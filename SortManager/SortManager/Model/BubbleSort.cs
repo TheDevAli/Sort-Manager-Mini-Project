@@ -12,6 +12,14 @@ public class BubbleSorter : Sorter
         get;
     }
 
+    public override long GetMilliseconds()
+    {
+        return stopWatch.ElapsedMilliseconds;
+    }
+    public override long GetTicks()
+    {
+        return stopWatch.ElapsedTicks;
+    }
     public override int[] Sort(int[] input)
     {
         stopWatch.Start();
