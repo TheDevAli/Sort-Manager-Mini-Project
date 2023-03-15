@@ -6,7 +6,7 @@ namespace SortManager
     {
         static void Main(string[] args)
         {
-            View.AskArraySize();
+            Controller.start();
 
 
 

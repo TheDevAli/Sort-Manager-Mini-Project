@@ -6,11 +6,11 @@ public static class SorterFactory
 {
     public static Sorter CreateSorter(string type)
     {
-        switch (type.ToLower())
+        switch (type)
         {
-            case "bubblesort":
+            case "a":
                 return new BubbleSorter();
-            case "mergesort":
+            case "b":
                 return new MergeSorter();
             default:
                 throw new ArgumentException("Invalid sort type");
