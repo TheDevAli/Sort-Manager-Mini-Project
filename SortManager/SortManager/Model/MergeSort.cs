@@ -4,17 +4,16 @@ namespace Model;
 
 internal class MergeSorter : Sorter
 {
-    private Stopwatch stopWatch = new Stopwatch();
+    private Stopwatch stopWatch = Stopwatch.StartNew();
 
-    private long _timelapse;
+    private long _millisecs,_ticks;
     public override long Timelapse
     {
         get;
     }
-
-    public override int[] Sort(int[] input)
+    private int[] MergeSort(int[] input)
     {
-        stopWatch.Start();
+
 
         int length = input.Length;
         int middle;
@@ -48,11 +47,25 @@ internal class MergeSorter : Sorter
 
         Merge(leftArray, rightArray, input);
 
-        stopWatch.Stop();
-        _timelapse = stopWatch.ElapsedMilliseconds;
         return input;
     }
-
+    public override int[] Sort(int[] input)
+    {
+        stopWatch.Restart();
+        int[] result = MergeSort(input);
+        stopWatch.Stop();
+        _ticks = stopWatch.ElapsedTicks;
+        _millisecs=stopWatch.ElapsedMilliseconds;
+        return result;
+    }
+    public  override long GetMilliseconds()
+    {
+        return _millisecs; 
+    }
+    public override long GetTicks()
+    {
+        return _ticks;
+    }
     private static void Merge(int[] leftArray, int[] rightArray, int[] inputArray)
     {
         int leftSize = inputArray.Length / 2;
