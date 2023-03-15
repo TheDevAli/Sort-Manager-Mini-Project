@@ -16,6 +16,10 @@ namespace SortManager
             int[] ary = ArrayBuilder.GenArray(arraySize);
 
             View.PrintArray(ary);
+
+            string choice = View.AskSortAlgor();
+
+
         }
     }
 }

@@ -2,15 +2,18 @@ namespace SortManagerTests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        
 
-        [Test]
+        [TestCase]
         public void Test1()
         {
             Assert.Pass();
+        }
+
+
+        public static object[] AddTest()
+        {
+
         }
     }
 }
