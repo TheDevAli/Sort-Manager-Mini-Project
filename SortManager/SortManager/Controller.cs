@@ -25,11 +25,9 @@ namespace SortManager
             var output = a.Sort(ary);
 
             
-
             if (rev)
-            {
-                output = output.Reverse().ToArray();
-                View.PrintArray(output);
+            {               
+                View.PrintArray(output.Reverse().ToArray());
             } else
             {
                 View.PrintArray(output);
